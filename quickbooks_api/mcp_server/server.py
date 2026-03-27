@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 mcp = FastMCP(
     "QuickBooks Online",
-    description="QuickBooks Online API — manage customers, invoices, payments, bills, vendors, reports, and more.",
+    instructions="QuickBooks Online API — manage customers, invoices, payments, bills, vendors, reports, and more.",
 )
 
 _client: QuickBooksClient | None = None
