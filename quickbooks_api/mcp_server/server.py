@@ -1,5 +1,7 @@
 """MCP server exposing QuickBooks Online API tools for Claude."""
 
+from __future__ import annotations
+
 import json
 import os
 import logging

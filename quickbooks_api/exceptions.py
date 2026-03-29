@@ -1,5 +1,7 @@
 """Custom exceptions for QuickBooks API client."""
 
+from __future__ import annotations
+
 
 class QuickBooksError(Exception):
     """Base exception for QuickBooks API errors."""

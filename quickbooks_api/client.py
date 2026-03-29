@@ -1,5 +1,7 @@
 """Core QuickBooks Online API client with retry logic and rate limiting."""
 
+from __future__ import annotations
+
 import time
 import logging
 

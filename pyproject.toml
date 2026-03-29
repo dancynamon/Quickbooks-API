@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "quickbooks-api"
 version = "1.0.0"
 description = "QuickBooks Online API client with MCP server integration for Claude"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = [
     "requests>=2.31.0",
     "mcp>=1.0.0",

@@ -1,5 +1,7 @@
 """QuickBooks Online Invoice operations."""
 
+from __future__ import annotations
+
 from quickbooks_api.entities.base import BaseService
 
 
