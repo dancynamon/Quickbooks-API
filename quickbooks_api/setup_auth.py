@@ -34,7 +34,10 @@ def main():
     print("\nStarting OAuth flow...\n")
 
     try:
-        token_data = auth.run_local_auth_flow()
+        # Parse port from redirect URI
+        from urllib.parse import urlparse
+        port = urlparse(redirect_uri).port or 8000
+        token_data = auth.run_local_auth_flow(port=port)
         print(f"\nAuthentication successful!")
         print(f"Realm ID: {auth.realm_id}")
         print(f"Tokens saved to: {auth.token_file}")
