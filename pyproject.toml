@@ -11,6 +11,7 @@ dependencies = [
     "requests>=2.31.0",
     "mcp>=1.0.0",
     "python-dotenv>=1.0.0",
+    "playwright>=1.40.0",
 ]
 
 [project.optional-dependencies]
@@ -21,6 +22,7 @@ dev = [
 
 [project.scripts]
 qbo-mcp-server = "quickbooks_api.mcp_server.server:main"
+qbo-browser-mcp = "quickbooks_api.browser_mcp.server:main"
 
 [tool.setuptools.packages.find]
 include = ["quickbooks_api*"]

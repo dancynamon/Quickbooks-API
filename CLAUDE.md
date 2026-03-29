@@ -19,6 +19,42 @@ This project provides a QuickBooks Online MCP server. Configure it in `~/.claude
 }
 ```
 
+## Browser Automation MCP Server Setup
+
+This project also provides a headless browser automation MCP server for QBO tasks that require UI interaction (bank feed review, reconciliation, report exports, settings changes). Configure it in `~/.claude.json`:
+
+```json
+{
+  "mcpServers": {
+    "quickbooks-browser": {
+      "command": "qbo-browser-mcp",
+      "env": {
+        "QBO_EMAIL": "<your_intuit_email>",
+        "QBO_PASSWORD": "<your_intuit_password>",
+        "QBO_ENVIRONMENT": "sandbox",
+        "QBO_HEADLESS": "true",
+        "QBO_TIMEOUT": "30000",
+        "QBO_DOWNLOADS_DIR": "/tmp/qbo-downloads"
+      }
+    }
+  }
+}
+```
+
+After installing, run `playwright install chromium` to download the browser binary.
+
+### Browser MCP Tools
+
+**Lifecycle**: `browser_start`, `browser_stop`, `browser_status`
+**Auth**: `qbo_login`
+**Navigation**: `navigate`, `go_to_dashboard`, `go_to_invoices`, `go_to_expenses`, `go_to_customers`, `go_to_vendors`, `go_to_reports`, `go_to_chart_of_accounts`, `go_to_reconcile`, `go_to_bank_transactions`, `go_to_settings`, `go_to_payroll`, `go_to_taxes`
+**Screenshots**: `take_screenshot`, `save_screenshot`
+**DOM Interaction**: `click_element`, `fill_field`, `select_dropdown`, `type_text`, `press_key`
+**Content Extraction**: `get_text`, `get_page_text`, `get_elements`, `get_element_attribute`, `extract_table`, `get_page_html`, `run_javascript`
+**Downloads**: `download_file`
+**Waiting**: `wait_for_element`, `wait_for_page_load`
+**QBO Workflows**: `search_qbo`, `export_report`, `categorize_bank_transaction`, `get_bank_transactions_for_review`, `start_reconciliation`
+
 ## Order Processing Workflow
 
 When asked to "process orders", "process POs", or "triage orders from email":
